@@ -28,7 +28,7 @@ app.get('/', function(req, res) {
   res.sendFile(process.cwd() + '/views/index.html');
 });
 
-app.post('/api/shorturl/url', (req, res) => {
+app.post('/api/shorturl', (req, res) => {
   let reg = /https:\/\/www.|http:\/\/www./g;
 
   dns.lookup(req.body.url.replace(reg, ""), (e) => {
